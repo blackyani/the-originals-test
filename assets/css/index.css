@@ -1,0 +1,43 @@
+:root {
+    --header-color: #ffffff3d;
+    --dynamic-text: #172B4D;
+    --dynamic-button-highlighted: rgba(0, 0, 0, 0.5);
+    --dynamic-button-highlighted-text: #FFFFFF;
+    --hover-border: #0C66E4;
+}
+
+/*reset styles*/
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+}
+/*reset styles*/

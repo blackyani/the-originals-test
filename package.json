@@ -11,13 +11,19 @@
   },
   "dependencies": {
     "@nuxt/eslint": "^0.5.7",
+    "@primevue/themes": "^4.0.7",
     "nuxt": "^3.13.0",
+    "primevue": "^4.0.7",
     "vue": "latest",
     "vue-draggable-next": "^2.2.1",
     "vue-material-design-icons": "^5.3.0",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@primevue/nuxt-module": "^4.0.7",
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/nuxt": "^11.0.3",
+    "sass-embedded": "^1.78.0",
     "typescript": "^5.6.2"
   }
 }
