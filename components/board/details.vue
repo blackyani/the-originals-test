@@ -171,7 +171,7 @@ onMounted(() => {
   $dialog-width: 350px;
 
   :global(.p-dialog-content) {
-    overflow-y: hidden; !important;
+    overflow-y: hidden !important;
   }
 
   .details-dialog-header-wrapper {
