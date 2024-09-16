@@ -6,13 +6,13 @@ import TrashCanOutline from "vue-material-design-icons/TrashCanOutline.vue";
 import { onClickOutside } from '@vueuse/core'
 
 const props = defineProps<{
-  editItem: EditItem | null,
+  editItem: IEditItem | null,
 }>()
 
 const emit = defineEmits<{
-  updateItem: (item: EditItem) => void;
-  deleteItem: (item: EditItem) => void;
-  detailsItem: (item: EditItem) => void;
+  updateItem: (item: IEditItem) => void;
+  deleteItem: (item: IEditItem) => void;
+  detailsItem: (item: IEditItem) => void;
   close: () => void;
 }>();
 
@@ -31,7 +31,7 @@ const textAreaRef = ref<HTMLTextAreaElement | null>(null);
 const menuRef = ref<HTMLTextAreaElement | null>(null);
 const menuItems = ref([
   { label: 'Open Card', action: handleOpen, icon: OpenInNew },
-  { label: 'Delete', action: handleDelete, icon: TrashCanOutline}
+  { label: 'Delete', action: handleDelete, icon: TrashCanOutline }
 ]);
 onClickOutside(menuRef, () => emit('close'));
 
@@ -59,7 +59,7 @@ onMounted(async () => {
     <div ref="menuRef" class="edit-container">
       <Menu :model="menuItems" class="edit-container-menu">
         <template #item="{ item }">
-          <span class="edit-container-item" @click="item.action">
+          <span class="edit-container-item" @click.stop="item.action">
             <component :is="item.icon" v-bind="{ size: 16 }" class="edit-container-item-icon" />
             {{ item.label }}</span>
         </template>
@@ -68,13 +68,12 @@ onMounted(async () => {
         <TextArea
             ref="textAreaRef"
             v-model="itemName"
-            autofocus
             fluid
             placeholder="Enter new name of the card..."
             rows="3"
-            @keyup.enter="handleUpdateItem"
+            @click.stop
         />
-        <Button label="Secondary" severity="info" @click="handleUpdateItem">
+        <Button label="Secondary" severity="info" @click.stop="handleUpdateItem">
           Save
         </Button>
       </div>

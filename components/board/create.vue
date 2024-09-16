@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Plus from "vue-material-design-icons/Plus.vue";
 import Close from "vue-material-design-icons/Close.vue";
-import CreditCardMultipleOutline from "vue-material-design-icons/CreditCardMultipleOutline.vue";
 import TextArea from 'primevue/textarea';
 
 const props = defineProps<{
@@ -39,9 +38,6 @@ const handleAddItem = () => {
       <Button label="Secondary" severity="secondary" class="create-container-button__add-action" @click="isCreateMode = true">
         <Plus />
         Add Card
-      </Button>
-      <Button label="Secondary" severity="secondary">
-        <CreditCardMultipleOutline :size="14" />
       </Button>
     </div>
   </div>
@@ -82,7 +78,7 @@ const handleAddItem = () => {
 
       &__add-action {
         display: flex;
-        width: 90%;
+        width: 100%;
         align-items: center;
         justify-content: flex-start;
       }
